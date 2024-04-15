@@ -1,16 +1,31 @@
-import React from "react";
+import React, { useContext } from "react";
+import { MyContext } from "../../Context/Context";
 
 export default function CartCard(props) {
-  function handleDelete() {}
+  const { CartItem, setCartItem } = useContext(MyContext);
+  const { CountItem, setCountItem } = useContext(MyContext);
+  function handleDelete() {
+    if (CartItem.length != 0) {
 
-  function HandleShare(params) {}
+     const filterData =  CartItem.filter((item) =>{
+      if (item.id!=props.id) {
+          return item;
+        }
+     } 
+      );
+      setCartItem(filterData);
+
+      // setCartItem(filterData);
+    } else {
+      console.log("Cart is empty");
+    }
+  }
+
+  function HandleShare() {}
 
   return (
-    <div className="d-flex" style={{justifyContent:'space-between'}} >
-      <div
-        className=""
-        style={{ marginLeft: "0px", width: "18rem" }}
-      >
+    <div className="d-flex text-center" style={{ alignItems: "center" }}>
+      <div className="border" style={{ marginLeft: "0px", width: "18rem" }}>
         <img
           style={{
             objectFit: "contain",
@@ -32,7 +47,7 @@ export default function CartCard(props) {
           <a className="btn btn-primary mx-2" onClick={HandleShare}>
             Share
           </a>
-          <p className="fw-3 m-2 p-3" >Count: 1</p>
+          <p className="fw-3 m-2 p-2"> Qty : {props.count} </p>
         </div>
       </div>
     </div>

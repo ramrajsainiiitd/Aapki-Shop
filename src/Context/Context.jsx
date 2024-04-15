@@ -5,7 +5,7 @@ export const ContextProvider = (props) => {
   const [ProductDetails, setProductDetails] = useState([]);
   const[Search, setSearch] = useState('');
   const[CartItem, setCartItem] = useState([]);
-  const[CounItem, setCountItem] = useState(0)
+  const[CountItem, setCountItem] = useState(0)
 
 
   return (
@@ -14,7 +14,7 @@ export const ContextProvider = (props) => {
         ProductDetails,
         setProductDetails,
         CartItem, setCartItem,
-        CounItem, setCountItem,
+        CountItem, setCountItem,
         Search, setSearch 
         
       }}

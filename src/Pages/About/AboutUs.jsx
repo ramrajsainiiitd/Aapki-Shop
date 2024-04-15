@@ -2,8 +2,8 @@ import React from 'react'
 
 export default function AboutUs() {
   return (
-    <div className='mt-5' >
-      This is about us page.
+    <div className="display-6 text-center" >
+      <p>This is about us page</p>
     </div>
   )
 }

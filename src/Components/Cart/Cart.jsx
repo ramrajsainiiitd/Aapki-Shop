@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import { MyContext } from "../../Context/Context";
 import CartCard from "../Card/CartCard";
+import { Link } from "react-router-dom";
 
 export default function Cart() {
   const { ProductDetails, setProductDetails } = useContext(MyContext);
@@ -33,13 +34,16 @@ export default function Cart() {
                   }}
                 >
                   <p className="p-3"> Price: ₹ {product.price}</p>
-                  <p className="p-3"> Total: ₹ {product.price}</p>
+                  <p className="p-3"> Total: ₹ {product.price*product.count}</p>
                 </div>
               </div>
             ))}
           </div>
         ) : (
+          <>
           <p className="display-6 text-center">Your Aapki Shop Cart is empty</p>
+          <p className="text-center" ><Link to="/"> Shop Now </Link></p>
+          </>
         )}
       </div>
     </>

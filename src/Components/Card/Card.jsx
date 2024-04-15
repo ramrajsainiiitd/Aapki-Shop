@@ -6,6 +6,7 @@ export default function Card(props) {
   const [ShowMoreDescription, setShowMoreSescription] = useState(false);
   const { ProductDetails, setProductDetails } = useContext(MyContext);
   const { CartItem, setCartItem } = useContext(MyContext);
+  const { CountItem, setCountItem } = useContext(MyContext);
 
   function ToggleTitle() {
     setShowMoreTitle(!ShowMoreTitle);
@@ -16,7 +17,17 @@ export default function Card(props) {
   }
 
   function handleAddToCart() {
-    setCartItem([...CartItem, props]);
+    const existingProductIndex = CartItem.findIndex(
+      (item) => item.id === props.id
+    );
+    // console.log(existingProductIndex);
+    if (existingProductIndex !== -1) {
+      const updatedCart = [...CartItem];
+      updatedCart[existingProductIndex].count++;
+      setCartItem(updatedCart);
+    } else {
+      setCartItem([...CartItem, { ...props, count: 1 }]);
+    }
   }
 
   return (
