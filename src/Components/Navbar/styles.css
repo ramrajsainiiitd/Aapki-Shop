@@ -1,0 +1,11 @@
+:root {
+    --blue: #1e90ff;
+    --white: #ffffff;
+  }
+  .logoContainer{
+    color: var(--blue);
+  }
+
+  #searchbar{
+    color: var(--blue);
+  }
