@@ -28,7 +28,7 @@ export default function Navbar() {
               to="/"
               className="logoContainer navbar-brand border rounded px-2"
             >
-              Aapki Shop Ye Hai
+              Aapki Shop
             </Link>
             <Link to="about-us" className="navbar-brand">
               About Us
