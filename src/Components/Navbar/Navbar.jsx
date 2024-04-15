@@ -6,18 +6,18 @@ import { MyContext } from "../../Context/Context";
 
 
 export default function Navbar() {
-  const [search, setSearch] = useContext(MyContext);
-  const[ProductDetails, setProductDetails] = useContext(MyContext);
-  const[CartData, setCartData] = useContext(MyContext);
+  const {Search, setSearch} = useContext(MyContext);
+  const {CartItem, setCartItem} = useContext(MyContext);
   
   const navigate = useNavigate();
 
   function handleCart() {
+    
     navigate("/cart");
   }
 
   function handleSearch() {
-    console.log("ok");
+    console.log("ok"); // need to create some logic to filter the data.
   }
   return (
     <div>

@@ -14,20 +14,7 @@ import Footer from './Components/Footer/Footer'
 import Header from './Components/Header/Header'
 
 function App() {
-  const[ProductDetails, setProductDetails]= useContext(MyContext);
-
-  useEffect(() => {
-    async function fetchData() {
-      try {
-        const response = await Axios.get("https://fakestoreapi.com/products");
-        setProductDetails(response.data)
-      } catch (error) {
-        console.error(error);
-      }
-    }
-
-    fetchData();
-  }, []);
+ 
 
   return (
     <>

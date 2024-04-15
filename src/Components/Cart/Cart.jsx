@@ -1,16 +1,46 @@
 import React, { useContext, useState } from "react";
-import Card from "../Card/Card";
 import { MyContext } from "../../Context/Context";
+import CartCard from "../Card/CartCard";
 
 export default function Cart() {
-  const [ProductDetails, setProductDetails] = useContext(MyContext);
-  const [CartData, setCartData] = useContext(MyContext);
-
+  const { ProductDetails, setProductDetails } = useContext(MyContext);
+  const { CartItem, setCartItem } = useContext(MyContext);
+  const { CounItem, setCountItem } = useContext(MyContext);
+  console.log(CartItem);
 
   return (
     <>
       <div className="container" style={{ marginTop: "100px" }}>
-        This is Cart.
+        {CartItem.length != 0 ? (
+          <div>
+            {CartItem.map((product, index) => (
+              <div
+                key={product.id}
+                className="px-2"
+                style={{ marginLeft: "0px", display:'flex', justifyContent:'space-between' }}
+              >
+                <CartCard
+                  id={product.id}
+                  title={product.title}
+                  price={product.price}
+                  image={product.image}
+                />
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "space-between",
+                  }}
+                >
+                  <p className="p-3"> Price: ₹ {product.price}</p>
+                  <p className="p-3"> Total: ₹ {product.price}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <p className="display-6 text-center">Your Aapki Shop Cart is empty</p>
+        )}
       </div>
     </>
   );

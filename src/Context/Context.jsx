@@ -3,21 +3,21 @@ export const MyContext = createContext(null);
 
 export const ContextProvider = (props) => {
   const [ProductDetails, setProductDetails] = useState([]);
-  const [CartData, setCartData] = useState([]);
-  const [search, setSearch] = useState("");
+  const[Search, setSearch] = useState('');
+  const[CartItem, setCartItem] = useState([]);
+  const[CounItem, setCountItem] = useState(0)
 
-  console.log(CartData);
 
   return (
     <MyContext.Provider
-      value={[
+      value={{
         ProductDetails,
         setProductDetails,
-        CartData,
-        setCartData,
-        search,
-        setSearch,
-      ]}
+        CartItem, setCartItem,
+        CounItem, setCountItem,
+        Search, setSearch 
+        
+      }}
     >
       {props.children}
     </MyContext.Provider>

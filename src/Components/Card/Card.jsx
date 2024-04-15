@@ -4,8 +4,8 @@ import { MyContext } from "../../Context/Context";
 export default function Card(props) {
   const [ShowMoreTitle, setShowMoreTitle] = useState(false);
   const [ShowMoreDescription, setShowMoreSescription] = useState(false);
-  const [ProductDetails, setProductDetails] = useContext(MyContext);
-  const [CartData, setCartData] = useContext(MyContext);
+  const { ProductDetails, setProductDetails } = useContext(MyContext);
+  const { CartItem, setCartItem } = useContext(MyContext);
 
   function ToggleTitle() {
     setShowMoreTitle(!ShowMoreTitle);
@@ -15,11 +15,8 @@ export default function Card(props) {
     setShowMoreSescription(!ShowMoreDescription);
   }
 
-  function handleAddToCart(item) {
-    const product = props;
-    setCartData((preCartData)=>[...preCartData, product]);
-    // console.log(CartData)
-    // console.log(product);
+  function handleAddToCart() {
+    setCartItem([...CartItem, props]);
   }
 
   return (
@@ -93,10 +90,7 @@ export default function Card(props) {
           <p>
             <b>Rating:</b> {props.rating} <b>Count:</b> {props.count}
           </p>
-          <a
-            className="btn btn-primary"
-            onClick={handleAddToCart}
-          >
+          <a className="btn btn-primary" onClick={handleAddToCart}>
             Add to Cart
           </a>
         </div>
