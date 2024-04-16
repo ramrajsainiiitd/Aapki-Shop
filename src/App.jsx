@@ -12,6 +12,7 @@ import Cart from './Components/Cart/Cart'
 import ErrorPage from './Pages/ErrorPage'
 import Footer from './Components/Footer/Footer'
 import Header from './Components/Header/Header'
+import LoginSignUp from './Pages/LoginSignUp/LoginSignUp'
 
 function App() {
  
@@ -25,6 +26,7 @@ function App() {
       <Route path='/contact-us' element={<ContactUS/>} />
       <Route path='/about-us' element={<AboutUs/>} />
       <Route path='/cart' element={<Cart/>} />
+      <Route path='/login-signup' element={<LoginSignUp/>} />
       <Route path='*' element={<ErrorPage/>} />
     </Routes>
     <Footer/>

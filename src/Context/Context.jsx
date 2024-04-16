@@ -6,6 +6,7 @@ export const ContextProvider = (props) => {
   const[Search, setSearch] = useState('');
   const[CartItem, setCartItem] = useState([]);
   const[CountItem, setCountItem] = useState(0)
+  const [isLoggedIn, setIsloggedIn] = useState(false);
 
 
   return (
@@ -15,7 +16,8 @@ export const ContextProvider = (props) => {
         setProductDetails,
         CartItem, setCartItem,
         CountItem, setCountItem,
-        Search, setSearch 
+        Search, setSearch, 
+        isLoggedIn, setIsloggedIn
         
       }}
     >

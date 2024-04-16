@@ -4,20 +4,22 @@ import { Link, useNavigate } from "react-router-dom";
 import Cart from "../Cart/Cart";
 import { MyContext } from "../../Context/Context";
 
-
 export default function Navbar() {
-  const {Search, setSearch} = useContext(MyContext);
-  const {CartItem, setCartItem} = useContext(MyContext);
-  
+  const { Search, setSearch } = useContext(MyContext);
+  const { CartItem, setCartItem } = useContext(MyContext);
+
   const navigate = useNavigate();
 
   function handleCart() {
-    
     navigate("/cart");
   }
 
   function handleSearch() {
     console.log("ok"); // need to create some logic to filter the data.
+  }
+
+  function handleLoginSignUp() {
+    navigate("/login-signup");
   }
   return (
     <div>
@@ -57,7 +59,16 @@ export default function Navbar() {
               🔍
             </button>
           </form>
-          <div>
+          <div className="d-flex">
+            <div>
+              <button
+                id="login-signup-btn"
+                className="btn btn-outline-success mx-2"
+                onClick={handleLoginSignUp}
+              >
+                Login/SignUp
+              </button>
+            </div>
             <button
               id="cart"
               className="btn btn-outline-success"
