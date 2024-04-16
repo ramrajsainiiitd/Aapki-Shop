@@ -44,22 +44,22 @@ export default function Footer() {
                 <h6 className="text-uppercase fw-bold mb-4">Products</h6>
                 <p>
                   <a href="#!" className="text-reset">
-                    Angular
+                    Mobile
                   </a>
                 </p>
                 <p>
                   <a href="#!" className="text-reset">
-                    React
+                    Electronics
                   </a>
                 </p>
                 <p>
                   <a href="#!" className="text-reset">
-                    Vue
+                    Home And Kitchen
                   </a>
                 </p>
                 <p>
                   <a href="#!" className="text-reset">
-                    Laravel
+                    Fashion
                   </a>
                 </p>
               </div>
@@ -91,11 +91,11 @@ export default function Footer() {
               <div className="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
                 <h6 className="text-uppercase fw-bold mb-4">Contact</h6>
                 <p>
-                  <i className="fas fa-home me-3"></i> New York, NY 10012, US
+                  <i className="fas fa-home me-3"></i> IIT delhi, New Delhi
                 </p>
                 <p>
                   <i className="fas fa-envelope me-3"></i>
-                  info@example.com
+                  aapkishop@gmail.com
                 </p>
                 <p>
                   <i className="fas fa-phone me-3"></i> + 01 234 567 88
