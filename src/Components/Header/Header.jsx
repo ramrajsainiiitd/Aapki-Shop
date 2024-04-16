@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 export default function Header() {
   return (
     <div>
-      <div id='header' className='fixed-top'>
+      <div id='header' className=' container-fluid fixed-top'>
         <ul >
             <li><Link to='/'>Mobiles</Link></li>
             <li><Link to='/'>Electromic</Link></li>

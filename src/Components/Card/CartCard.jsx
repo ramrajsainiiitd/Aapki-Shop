@@ -15,8 +15,6 @@ export default function CartCard(props) {
      } 
       );
       setCartItem(filterData);
-
-      // setCartItem(filterData);
     } else {
       console.log("Cart is empty");
     }
@@ -45,14 +43,20 @@ export default function CartCard(props) {
         <div className="card-body">
           <h5>{props.title}</h5>
 
-          <a className="btn btn-primary mx-2" onClick={ ()=> handleDelete(props.id)}>
+          <a className="btn btn-outline-success mx-2" onClick={ ()=> handleDelete(props.id)}>
             Delete
           </a>
 
-          <a className="btn btn-primary mx-2" onClick={HandleShare}>
+          <a className="btn btn-outline-success mx-2" onClick={HandleShare}>
             Share
           </a>
-          <p className="fw-3 m-2 p-2"> Qty : {props.count} </p>
+          <p className=" m-2 p-2"> Qty: <select className="rounded">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            </select></p>
         </div>
       </div>
     </div>

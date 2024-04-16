@@ -14,11 +14,15 @@ import Footer from './Components/Footer/Footer'
 import Header from './Components/Header/Header'
 import LoginSignUp from './Pages/LoginSignUp/LoginSignUp'
 
+import React from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+
 function App() {
  
 
   return (
     <>
+    <ToastContainer/>
     <Navbar/>
     <Header/>
     <Routes>

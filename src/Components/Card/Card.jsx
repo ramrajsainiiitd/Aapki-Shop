@@ -18,7 +18,7 @@ export default function Card(props) {
 
   function handleAddToCart(id) {
     const existingProductIndex = CartItem.findIndex(
-      (item) => item.id === props.id
+      (item) => item.id === id
     );
     // console.log(existingProductIndex);
     if (existingProductIndex !== -1) {
