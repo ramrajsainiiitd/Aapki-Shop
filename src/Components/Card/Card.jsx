@@ -16,7 +16,7 @@ export default function Card(props) {
     setShowMoreSescription(!ShowMoreDescription);
   }
 
-  function handleAddToCart() {
+  function handleAddToCart(id) {
     const existingProductIndex = CartItem.findIndex(
       (item) => item.id === props.id
     );
@@ -28,7 +28,9 @@ export default function Card(props) {
     } else {
       setCartItem([...CartItem, { ...props, count: 1 }]);
     }
+    // setCartItem([...CartItem,{ title:props.title, image:props.image, price:props.price}])
   }
+  // console.log(CartItem);
 
   return (
     <div>
@@ -101,7 +103,7 @@ export default function Card(props) {
           <p>
             <b>Rating:</b> {props.rating} <b>Count:</b> {props.count}
           </p>
-          <a className="btn btn-primary" onClick={handleAddToCart}>
+          <a className="btn btn-primary" onClick={()=>handleAddToCart(props.id)}>
             Add to Cart
           </a>
         </div>

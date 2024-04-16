@@ -74,7 +74,7 @@ export default function Navbar() {
               className="btn btn-outline-success"
               onClick={handleCart}
             >
-              🛒 Cart
+              🛒 Cart {CartItem.length>0&&CartItem.length}
             </button>
           </div>
         </div>

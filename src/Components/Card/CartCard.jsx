@@ -4,7 +4,8 @@ import { MyContext } from "../../Context/Context";
 export default function CartCard(props) {
   const { CartItem, setCartItem } = useContext(MyContext);
   const { CountItem, setCountItem } = useContext(MyContext);
-  function handleDelete() {
+  console.log( "props:", props)
+  function handleDelete(Id) {
     if (CartItem.length != 0) {
 
      const filterData =  CartItem.filter((item) =>{
@@ -19,7 +20,11 @@ export default function CartCard(props) {
     } else {
       console.log("Cart is empty");
     }
+
+
   }
+
+  console.log("the filter item is:", CartItem);
 
   function HandleShare() {}
 
@@ -40,7 +45,7 @@ export default function CartCard(props) {
         <div className="card-body">
           <h5>{props.title}</h5>
 
-          <a className="btn btn-primary mx-2" onClick={handleDelete}>
+          <a className="btn btn-primary mx-2" onClick={ ()=> handleDelete(props.id)}>
             Delete
           </a>
 

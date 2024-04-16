@@ -7,7 +7,6 @@ export default function Cart() {
   const { ProductDetails, setProductDetails } = useContext(MyContext);
   const { CartItem, setCartItem } = useContext(MyContext);
   const { CounItem, setCountItem } = useContext(MyContext);
-  console.log(CartItem);
 
   return (
     <>
