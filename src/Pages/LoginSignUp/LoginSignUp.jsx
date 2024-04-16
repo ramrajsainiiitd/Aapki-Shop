@@ -25,13 +25,13 @@ export default function LoginSignUp() {
         // Signed up
         const user = userCredential.user;
         console.log('user:', user);
-        toast.success('User created!');
+        alert('User created!');
         // ...
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-        toast.error(errorMessage);
+        alert(errorMessage);
         // ..
       });
       
